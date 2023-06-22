@@ -68,4 +68,5 @@ python dreamerv3/plot_crafter.py
 
 * No support for parallel environments, so it may need to be run with `--envs.amount 1` flag to override the default number of envs. 
 * No support for resuming runs
+* These setup instructions have only been tested on Google Cloud Platform Ubuntu 22.04 (x86) with A100 (40 GB).
 
