@@ -1,0 +1,13 @@
+cloudpickle
+crafter
+gym==0.26.2
+dm_control
+jax
+jaxlib
+numpy
+optax
+rich
+ruamel.yaml
+tensorflow-cpu
+tensorflow_probability
+tensorflow
