@@ -1,4 +1,36 @@
-Fork of https://github.com/danijar/dreamerv3 on February 27, 2023
+# Curious Replay for Model-based Adaptation
+
+Implementation of Curious Replay with the [DreamerV3](https://danijar.com/dreamerv3) agent in [jax](https://github.com/google/jax). 
+
+![fig_overview-01_small](https://user-images.githubusercontent.com/903830/236350331-b7aacb2c-671a-4137-90c2-b4dd210ebf30.png)
+
+If you find this code useful, please reference in your paper:
+
+```
+@article{kauvar2023curious,
+  title={Curious Replay for Model-Based Adaptation},
+  author={Kauvar, Isaac and Doyle, Chris and Zhou, Linqi and Haber, Nick},
+  journal={International Conference on Machine Learning},
+  year={2023}
+}
+```
+
+
+## Method
+
+Curious Replay prioritizes sampling of past experiences for training the agent's world model, 
+by focusing on the experiences that are most interesting to the agent - 
+whether because they are unfamiliar or surprising. 
+Inspired by the concept of curiosity, which is often used as an intrinsic reward to guide action selection, 
+here curiosity signals are used to guide selection of what experiences the agent should learn from (i.e. train its model with). 
+
+Curious Replay is a simple modification to existing agents that use experience replay -- with minimal 
+computational overhead -- by leveraging a count of how many times an experience has been sampled 
+and the model losses that are computed for each training batch. 
+
+This prioritization is especially helpful in changing environments, where adaptation is necessary. 
+Curious Replay helps keep the world model up to date as the environment changes, which is
+a prerequisite for effective action selection in model-based architectures. 
 
 # Install instructions on a fresh Ubuntu 22.04 (x86) install
 ```bash
@@ -69,4 +101,5 @@ python dreamerv3/plot_crafter.py
 * No support for parallel environments, so it may need to be run with `--envs.amount 1` flag to override the default number of envs. 
 * No support for resuming runs
 * These setup instructions have only been tested on Google Cloud Platform Ubuntu 22.04 (x86) with A100 (40 GB).
+* Based on fork of [DreamerV3 commit 84ecf19](https://github.com/danijar/dreamerv3/tree/84ecf191d967f787f5cc36298e69974854b0df9c).
 
