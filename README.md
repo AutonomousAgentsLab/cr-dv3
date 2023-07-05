@@ -1,6 +1,6 @@
 # Curious Replay for Model-based Adaptation
 
-Implementation of Curious Replay with the [DreamerV3](https://danijar.com/dreamerv3) agent in [jax](https://github.com/google/jax). 
+Implementation of [Curious Replay](https://arxiv.org/abs/2306.15934) with the [DreamerV3](https://danijar.com/dreamerv3) agent in [jax](https://github.com/google/jax). 
 
 ![fig_overview-01_small](https://user-images.githubusercontent.com/903830/236350331-b7aacb2c-671a-4137-90c2-b4dd210ebf30.png)
 
